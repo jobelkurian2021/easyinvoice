@@ -7,9 +7,18 @@ export type InvoiceSenderOrClient = {
     [key: string]: string // custom1, custom2, etc.
 }
 
-export type InvoiceProduct = {
-    quantity: string
-    description: string
+export type Invoicesou = {
+    passengers: string
+    source: string
+    destination: string
+    tax: number
+    price: number
+    date: Date
+}
+export type Invoicedest = {
+    passengers: string
+    source: string
+    destination: string
     tax: number
     price: number
 }
@@ -29,7 +38,8 @@ export type InvoiceData = {
     client?: InvoiceSenderOrClient
     invoiceNumber?: string
     invoiceDate?: string
-    products?: InvoiceProduct[]
+    source?: Invoicesou[]
+    destination?: Invoicedest[]
     bottomNotice?: string
     /**
      * Used for translating the headers to your preferred language
@@ -38,7 +48,7 @@ export type InvoiceData = {
     translate?: {
         invoiceNumber?: string
         invoiceDate?: string
-        products?: string
+        source?: string
         quantity?: string
         price?: string
         subtotal?: string
